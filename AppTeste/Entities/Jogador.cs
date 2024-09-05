@@ -1,28 +1,21 @@
-﻿namespace AppTeste.Entities
+﻿using AppTeste.Enums;
+
+namespace AppTeste.Entities
 {
     public class Jogador
     {
-        public Jogador(string name)
-        {
-            Name = name;
-        }
-
-        public string Name { get; set; }
-
+        public string Nome { get; }
         public EAcao Acao { get; private set; }
 
-        public void Jogar(EAcao acao)
+        public Jogador(string nome)
+        {
+            Nome = nome;
+        }
+
+        public void EscolherAcao(EAcao acao)
         {
             Acao = acao;
         }
-
-    }
-    public enum EAcao
-    {
-        Pedra,
-        Papel,
-        Tesoura,
-
-    }
+    }  
 
 }

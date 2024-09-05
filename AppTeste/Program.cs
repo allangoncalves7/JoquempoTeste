@@ -1,33 +1,15 @@
 ﻿using AppTeste.Entities;
+using AppTeste.Enums;
 
 
-var jogador = new Jogador("João");
-var jogador2 = new Jogador ("Maria");
+var jogador1 = new Jogador("João");
+var jogador2 = new Jogador("Maria");
 
-jogador.Jogar(EAcao.Papel);
-jogador2.Jogar(EAcao.Tesoura);
+jogador1.EscolherAcao(EAcao.Pedra);
+jogador2.EscolherAcao(EAcao.Tesoura);
 
+var jogo = new Jogo();
+var resultado = jogo.Jogar(jogador1.Acao, jogador2.Acao, jogador1.Nome, jogador2.Nome);
 
-var jogadaPedra = new Pedra();
-var jogadaPapel = new Papel();
-var jogadaTesoura = new Tesoura();
-
-var result = "";
-
-switch (jogador.Acao)
-{
-    case EAcao.Pedra:
-        result = jogadaPedra.Resultado(jogador2.Acao, jogador.Name, jogador2.Name);
-        break;
-    case EAcao.Papel:
-        result = jogadaPapel.Resultado(jogador2.Acao, jogador.Name, jogador2.Name);
-        break;
-    case EAcao.Tesoura:
-        result = jogadaTesoura.Resultado(jogador2.Acao, jogador.Name, jogador2.Name);
-        break;
-}
-
-
-
-Console.WriteLine(result);
+Console.WriteLine(resultado);
 Console.ReadKey();
