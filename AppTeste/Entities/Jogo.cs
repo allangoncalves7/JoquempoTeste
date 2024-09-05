@@ -13,15 +13,15 @@ namespace AppTeste.Entities
         { EAcao.Spock, new List<EAcao> { EAcao.Pedra, EAcao.Tesoura } }
     };
 
-        public string Jogar(EAcao acaoJogador1, EAcao acaoJogador2, string jogador1, string jogador2)
+        public string Jogar(Jogador jogador1, Jogador jogador2)
         {
-            if (acaoJogador1 == acaoJogador2)
+            if (jogador1.Acao == jogador2.Acao)
                 return "Empate!";
 
-            if (_regras[acaoJogador1].Contains(acaoJogador2))
-                return $"{jogador1} ganhou com {acaoJogador1}!";
+            if (_regras[jogador1.Acao].Contains(jogador2.Acao))
+                return $"{jogador1.Nome} ganhou com {jogador1.Acao}!";
 
-            return $"{jogador2} ganhou com {acaoJogador2}!";
+            return $"{jogador2.Nome} ganhou com {jogador1.Acao}!";
         }
     }
 }

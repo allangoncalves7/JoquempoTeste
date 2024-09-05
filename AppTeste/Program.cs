@@ -9,7 +9,7 @@ jogador1.EscolherAcao(EAcao.Pedra);
 jogador2.EscolherAcao(EAcao.Tesoura);
 
 var jogo = new Jogo();
-var resultado = jogo.Jogar(jogador1.Acao, jogador2.Acao, jogador1.Nome, jogador2.Nome);
+var resultado = jogo.Jogar(jogador1, jogador2);
 
 Console.WriteLine(resultado);
 Console.ReadKey();
