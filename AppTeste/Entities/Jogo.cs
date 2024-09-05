@@ -21,7 +21,7 @@ namespace AppTeste.Entities
             if (_regras[jogador1.Acao].Contains(jogador2.Acao))
                 return $"{jogador1.Nome} ganhou com {jogador1.Acao}!";
 
-            return $"{jogador2.Nome} ganhou com {jogador1.Acao}!";
+            return $"{jogador2.Nome} ganhou com {jogador2.Acao}!";
         }
     }
 }
